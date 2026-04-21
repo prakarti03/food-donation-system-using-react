@@ -1,0 +1,168 @@
+/* ===== Filter Bar ===== */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-bar__label {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 7px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--white);
+  color: var(--gray-600);
+  border: 2px solid var(--gray-200);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--green-400);
+  color: var(--green-600);
+  background: var(--green-50);
+}
+
+.filter-chip--active {
+  background: var(--green-600);
+  color: var(--white);
+  border-color: var(--green-600);
+  box-shadow: 0 4px 12px rgba(22,163,74,0.3);
+}
+
+.filter-chip--active:hover {
+  background: var(--green-700);
+  color: var(--white);
+}
+
+/* ===== Results Count ===== */
+.results-count {
+  font-size: 15px;
+  color: var(--gray-500);
+  margin-bottom: 32px;
+}
+
+.results-count strong {
+  color: var(--green-600);
+  font-size: 18px;
+}
+
+.results-count em {
+  color: var(--gray-700);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ===== Donations Grid ===== */
+.donations-grid {
+  align-items: start;
+}
+
+/* ===== Empty Callout ===== */
+.empty-callout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  margin-top: 40px;
+  border: 2px dashed var(--green-200);
+  background: var(--green-50);
+  box-shadow: none;
+}
+
+.empty-callout span { font-size: 40px; }
+
+.empty-callout h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--green-800);
+  margin-bottom: 4px;
+}
+
+.empty-callout p {
+  font-size: 14px;
+  color: var(--green-700);
+}
+
+.empty-callout .btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ===== Confirm Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 48px 40px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-box__icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+  animation: float 2s ease-in-out infinite;
+  display: block;
+}
+
+.modal-box__title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+}
+
+.modal-box__text {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.modal-box__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .filter-bar { flex-direction: column; align-items: flex-start; }
+  .empty-callout { flex-direction: column; text-align: center; }
+  .empty-callout .btn { margin: 0 auto; }
+  .modal-box { padding: 36px 24px; }
+}

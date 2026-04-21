@@ -1,0 +1,230 @@
+/* ===== Page Wrapper ===== */
+.page-wrapper {
+  padding: 60px 0 100px;
+  min-height: calc(100vh - 72px);
+  background: var(--gray-50);
+}
+
+/* ===== Page Header ===== */
+.page-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* ===== Donate Layout ===== */
+.donate-page { }
+
+.donate-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: start;
+}
+
+.donate-form-card {
+  padding: 36px;
+  border: 1px solid var(--gray-100);
+}
+
+/* Form input error state */
+.form-input--error {
+  border-color: var(--red-500) !important;
+  background: #fff5f5 !important;
+}
+
+.form-error {
+  font-size: 12px;
+  color: var(--red-500);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* Quantity row */
+.quantity-row {
+  display: flex;
+  gap: 12px;
+}
+
+.quantity-input { flex: 1; }
+.quantity-unit  { width: 130px; flex-shrink: 0; }
+
+/* Submit button */
+.donate-submit-btn {
+  margin-top: 8px;
+  position: relative;
+}
+
+.donate-submit-btn.loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Sidebar ===== */
+.donate-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 92px;
+}
+
+/* Tip Card */
+.tip-card {
+  border: 1px solid var(--gray-100);
+  padding: 28px;
+}
+
+.tip-card__title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-bottom: 18px;
+}
+
+.tip-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.tip-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--green-400);
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+/* Impact Card */
+.impact-card {
+  background: linear-gradient(135deg, var(--green-700), var(--green-900));
+  color: var(--white);
+  padding: 28px;
+  border: none;
+}
+
+.impact-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.impact-card__header h3 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.impact-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.impact-stat strong {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--green-200);
+}
+
+.impact-stat span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+.impact-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ===== Success Screen ===== */
+.success-screen {
+  max-width: 500px;
+  margin: 80px auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 56px 48px;
+  text-align: center;
+  border: 1px solid var(--gray-100);
+}
+
+.success-screen__icon {
+  font-size: 72px;
+  margin-bottom: 20px;
+  animation: float 2s ease-in-out infinite;
+  display: block;
+}
+
+.success-screen__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+}
+
+.success-screen__text {
+  font-size: 16px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.success-screen__text strong {
+  color: var(--green-600);
+}
+
+.success-screen__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .donate-layout {
+    grid-template-columns: 1fr;
+  }
+  .donate-sidebar { position: static; }
+}
+
+@media (max-width: 640px) {
+  .donate-form-card { padding: 24px; }
+  .success-screen { margin: 40px 16px; padding: 36px 24px; }
+  .quantity-row { flex-direction: column; }
+  .quantity-unit { width: 100%; }
+}
